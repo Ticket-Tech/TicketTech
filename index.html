@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Descripción breve de la página para mejorar SEO.">
+    <meta name="keywords" content="palabras clave, separadas, por, comas">
+    <meta name="author" content="Tu Nombre o Empresa">
+    <title>TickeTech</title>
+    <link rel="stylesheet" href="styles/styles.css">
+    <link rel="stylesheet" href="styles/eventos.css">
+    <link rel="icon" href="assets/favicon.ico" type="image/x-icon">
+    <!-- Compatibilidad con Internet Explorer -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+</head>
+<body>
+    <header>
+        <div class="logo-small">
+            <img src="./assets/logo-ticket.png" alt="Logo pequeño">
+        </div>
+   
+        <nav class="menu_nav">
+            <ul class="menu-list">
+                <li class="list-item"><a href="#aboutUs" class="link">Quiénes Somos</a></li>
+                <li class="list-item"><a href="#evento" class="link">Eventos</a></li>
+                <li class="list-item"><a href="#" onclick="openModal('contactModal')" class="link">Contacto</a></li>
+            </ul>
+        </nav>
+        <nav class="inicio">
+            <button class="btn" aria-label="open menu" data-nav-toggler>
+                <a href="#" onclick="openModal('loginModal')">Iniciar Sesión</a>
+            </button>
+        </nav>
+    </header>
+    <main>
+        <section class="zona1">
+            <img src="assets/fondo2.png" alt="fondo2" class="responsive-img">
+            <div class="h-content">
+                <h1 class="h1 h-title">Conéctate a la diversión<br> 
+                    con Ticket-Tech</h1>
+                <p class="h-texto">Compra tu entrada de manera rápida y segura.<br>
+                    Seguridad y confianza.<br>
+                    Compra tus tickets en un click.<br>
+                </p>
+            </div>
+            <div class="logo_large">
+                <img src="./assets/logo-ticket.png" alt="Logo grande">
+            </div>
+        </section>
+        <article id="evento" class="about">
+            <div class="modal-header">
+                <h1 class="subtitulo">Evento Destacado</h1>
+            </div>
+            <div class="modal-content">
+                <span class="close"></span>
+                <div class="imagen-destacada">
+                    <img src="./assets/dopamina.jpeg" alt="Imagen del Evento" class="responsive-img">
+                </div>
+                <div class="descripcion">
+                    <h1 class="titulo-evento">Dopamina</h1>
+                <p>Fecha: Noviembre 2024.</p>
+            
+                <p>Hora: 19:00</p>
+                
+                <p>Ubicación: Secret Ubicación.</p>
+            
+                <p>Detalle:<br>Estacionamiento privado.
+                <br>Acceso vip.</p>
+                <br>
+                <a href="productos.html" class="link">
+                    <button class="compra">Comprar</button>
+                </a>
+            </div>
+                <!--<button onclick="openModal('eventsModal')" class="compra"><p>Comprar</p></button>-->
+            </div>
+        </article>
+        <!-- Modales -->
+        <article class="informacion">
+            <div class="modal-header">
+                <h2 class="subtitulo">Quiénes Somos</h2>
+            </div>
+            <div class="modal-content">
+                <p>En Ticket-Tech, somos más que una empresa emergente; somos tus aliados en la transformación digital de eventos. Nos especializamos en la comercialización de tickets online mediante tecnología QR, ofreciendo una solución moderna y eficiente para la gestión de entradas.
+
+                    Nuestra misión es facilitar la experiencia de organización de eventos, permitiendo a nuestros clientes personalizar completamente sus tickets. Sabemos que cada evento es único, y es por eso que nos enfocamos en crear soluciones a medida que se adapten a tus necesidades específicas.
+                    
+                    En Ticket-Tech, valoramos profundamente la relación con nuestros clientes. Nuestro compromiso es brindar un servicio cercano y personalizado, asegurándonos de que cada interacción sea fluida y satisfactoria. Nos apasiona escuchar tus ideas y ayudarte a llevarlas a la realidad, convirtiendo cada evento en una experiencia memorable.
+                    
+                    Únete a nosotros en este camino hacia la digitalización de tus eventos y descubre cómo podemos transformar la manera en que gestionas tus entradas. En Ticket-Tech, ¡el futuro de tus eventos comienza aquí!</p>
+            </div>
+    </article>
+        <div id="eventsModal" class="modal">
+            <div class="modal-content">
+                <span class="close" onclick="closeModal('eventsModal')">&times;</span>
+                <h2>Eventos</h2>
+                <p>Detalles de los eventos...</p>
+            </div>
+        </div>
+
+        <div id="loginModal" class="modal">
+            <div class="modal-content">
+                <span class="close" onclick="closeModal('loginModal')">&times;</span>
+                <h2>Iniciar Sesión</h2>
+                <form action="/login" method="post">
+                    <label for="username">Nombre de Usuario:</label>
+                    <input type="text" id="username" name="username" required>
+                    <label for="password">Contraseña:</label>
+                    <input type="password" id="password" name="password" required>
+                    <button type="submit">Entrar</button>
+                </form>
+            </div>
+        </div>
+
+        <div id="contactModal" class="modal">
+            <div class="modal-content">
+                <span class="close" onclick="closeModal('contactModal')">&times;</span>
+                <h2>Contacto</h2>
+                <form action="/submit-contact" method="post">
+                    <label for="name">Nombre:</label>
+                    <input type="text" id="name" name="name" required>
+                    <label for="email-contact">Correo Electrónico:</label>
+                    <input type="email" id="email-contact" name="email-contact" required>
+                    <label for="message">Mensaje:</label>
+                    <textarea id="message" name="message" required></textarea>
+                    <button type="submit">Enviar</button>
+                </form>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <p>&copy; 2024 Tu Empresa. Todos los derechos reservados.</p>
+    </footer>
+    <script src="scripts/scripts.js"></script>
+</body>
+</html>
